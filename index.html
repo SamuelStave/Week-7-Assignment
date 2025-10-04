@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 7 Assignment- CSS3 & JS Animation + Interactivity</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Week 7 Assignment: CSS3 Transitions, Animations & JavaScript</h1>
+    </header>   
+    <main>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#transitions">Transitions</a>
+            <a href="#animations">Animations</a>
+            <a href="#js">JS Functions</a>
+            <a href="#combo">JS + Animation</a>
+            <a href="#interactive">Interactive (Week 6)</a>
+        </nav>
+        <!-- Part 1: CSS3 Transitions and Animations -->
+        <section id="transitions">
+            <h2>Hover over the image to see the transition effect</h2>
+            <div class="image-container">
+                <img src="images/cookies.jpg" alt="cookies" class="hover-img">
+            </div>
+        </section>
+        <section id="animations">
+            <h2>Loading Spinner (CSS3 Animation)</h2>
+            <div class="spinner"></div>
+            <h2>Bouncing Animated Image</h2>
+            <img class="animated-image" src="images/puppies.jpg" alt="puppy">
+        </section>
+        <!-- Part 2: JavaScript Functions (Scope, Parameters, Return) -->
+        <section id="js">
+            <h2>JavaScript Functions Demo</h2>
+            <div class="js-func-demo">
+                <label for="num1">Number 1:</label>
+                <input type="number" id="num1" value="0">
+                <label for="num2">Number 2:</label>
+                <input type="number" id="num2" value="0">
+                <button id="sumBtn">Add</button>
+                <span id="sumResult"></span>
+            </div>
+            <div class="js-func-demo">
+                <button id="scopeBtn">Show Scope Example</button>
+                <span id="scopeResult"></span>
+            </div>
+        </section>
+        <!-- Part 3: Combining CSS Animation with JS -->
+        <section id="combo">
+            <h2>Trigger CSS Animation with JavaScript</h2>
+            <button id="animateBoxBtn">Animate the Box!</button>
+            <div class="js-anim-box" id="jsAnimBox"></div>
+            <h2>Flip Card (JS triggers CSS Animation)</h2>
+            <button id="flipBtn">Flip Card</button>
+            <div class="flip-card" id="flipCard">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <p>Front Side</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Back Side 🎉</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Part 4: Week 6 Interactive Elements -->
+        <section id="interactive">
+            <h2>Interactive Elements (Week 6)</h2>
+            <div class="interactive-row">
+                <button id="showMsgBtn" class="primary-btn">Show Message</button>
+                <span id="msgOutput" class="msg-output"></span>
+            </div>
+            <div class="interactive-row">
+                <input type="text" id="liveInput" placeholder="Type here..." class="input-text">
+                <span id="liveResult" class="live-result"></span>
+            </div>
+            <div class="feature-block">
+                <h3>Light/Dark Mode Toggle</h3>
+                <button id="toggleThemeBtn" class="primary-btn">Toggle Light/Dark Mode</button>
+            </div>
+            <div class="feature-block">
+                <h3>Simple Counter</h3>
+                <button id="decrementBtn" class="counter-btn">-</button>
+                <span id="counterValue" class="counter-value">0</span>
+                <button id="incrementBtn" class="counter-btn">+</button>
+                <button id="resetBtn" class="counter-btn reset-btn">Reset</button>
+            </div>
+            <div class="faq">
+                <div class="faq-item">
+                    <button class="faq-question">What is JavaScript?</button>
+                    <div class="faq-answer">JavaScript is a programming language for the web.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Why use event listeners?</button>
+                    <div class="faq-answer">They let you run code in response to user actions.</div>
+                </div>
+            </div>
+            <h3>Custom Form Validation</h3>
+            <form id="signupForm" class="form-block" novalidate>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" class="input-text">
+                <span class="error" id="nameError"></span>
+                <br>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" class="input-text">
+                <span class="error" id="emailError"></span>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" class="input-text">
+                <span class="error" id="passwordError"></span>
+                <br>
+                <button type="submit" class="primary-btn submit-btn">Sign Up</button>
+                <span class="success" id="formSuccess"></span>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Week 7 Assignment</p>
+    </footer>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
