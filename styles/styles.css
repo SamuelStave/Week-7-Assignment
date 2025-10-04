@@ -1,0 +1,381 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f7fafd;
+    color: #1a237e;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background: #2563eb;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0 1.1rem 0;
+}
+header h1 {
+    margin: 0;
+    font-size: 2.3rem;
+    letter-spacing: 2px;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2.2rem;
+    flex-wrap: wrap;
+}
+nav a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 5px;
+    transition: background 0.2s, color 0.2s;
+}
+nav a:hover {
+    background: #2563eb;
+    color: #fff;
+}
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px #2563eb22;
+    padding: 2rem;
+}
+section {
+    margin: 2rem 0;
+    padding-bottom: 1.2rem;
+    border-bottom: 2px solid #e3eafc;
+}
+h2 {
+    color: #1743a7;
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+    margin-top: 1.2rem;
+    letter-spacing: 1px;
+}
+
+/* Part 1: CSS3 Transitions and Animations */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hover-img {
+    width: 260px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px #2563eb33;
+    transition:
+        transform 0.4s cubic-bezier(.45,1.8,.43,.87),
+        box-shadow 0.35s,
+        filter 0.28s;
+}
+.hover-img:hover {
+    transform: scale(1.15) rotate(-3deg);
+    box-shadow: 0 10px 32px #ffb30055;
+    filter: brightness(1.15) contrast(1.1);
+}
+.animated-image {
+    display: block;
+    margin: 2rem auto 0 auto;
+    width: 220px;
+    border-radius: 15px;
+    box-shadow: 0 2px 14px #2563eb33;
+    animation: bounceImg 1.3s infinite alternate;
+}
+@keyframes bounceImg {
+    0%   { transform: translateY(0);}
+    100% { transform: translateY(-30px);}
+}
+.spinner {
+    margin: 1.2rem auto;
+    border: 7px solid #e3eafc;
+    border-top: 7px solid #2563eb;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    animation: spin 1.1s linear infinite;
+}
+@keyframes spin {
+    0%   { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+
+/* Part 2: JavaScript Functions */
+.js-func-demo {
+    margin: 1.1rem 0;
+}
+input[type="number"], .input-text {
+    width: 70px;
+    font-size: 1rem;
+    padding: 5px 8px;
+    margin: 0 6px 0 0;
+    border-radius: 4px;
+    border: 1.5px solid #b3c6e7;
+}
+#sumBtn, #scopeBtn, .primary-btn {
+    background: #2563eb;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    padding: 0.4rem 1.2rem;
+    font-size: 1rem;
+    margin-left: 8px;
+    cursor: pointer;
+    transition: background 0.18s;
+}
+#sumBtn:hover, #scopeBtn:hover, .primary-btn:hover {
+    background: #ffb300;
+    color: #1a237e;
+}
+#sumResult, #scopeResult {
+    color: #2563eb;
+    font-size: 1.13rem;
+    margin-left: 1.2rem;
+    min-width: 1.5em;
+}
+
+/* Part 3: JS triggers CSS Animation */
+#animateBoxBtn {
+    background: #2563eb;
+    color: #fff;
+    padding: 0.5rem 1.3rem;
+    border: none;
+    border-radius: 7px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.17s;
+    margin-bottom: 1.5rem;
+}
+#animateBoxBtn:hover {
+    background: #ffb300;
+    color: #1a237e;
+}
+.js-anim-box {
+    width: 80px;
+    height: 80px;
+    background: #2563eb;
+    border-radius: 18px;
+    margin: 1.1rem auto 2rem auto;
+    transition: 
+        transform 0.7s cubic-bezier(.22,1.12,.36,1),
+        background 0.35s;
+}
+.js-anim-box.animated {
+    transform: scale(1.35) rotate(360deg);
+    background: #ffb300;
+}
+
+/* Flip Card */
+#flipBtn {
+    background: #2563eb;
+    color: #fff;
+    padding: 0.4rem 1.1rem;
+    border: none;
+    border-radius: 7px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.17s;
+    margin-bottom: 1.3rem;
+}
+#flipBtn:hover {
+    background: #ffb300;
+    color: #1a237e;
+}
+.flip-card {
+    background-color: transparent;
+    width: 120px;
+    height: 80px;
+    perspective: 700px;
+    margin: 0 auto 2rem auto;
+    display: inline-block;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(.55,0,0,1.1);
+    transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    font-size: 1.1rem;
+    font-weight: 550;
+}
+.flip-card-front {
+    background: #2563eb;
+    color: #fff;
+}
+.flip-card-back {
+    background: #ffb300;
+    color: #1a237e;
+    transform: rotateY(180deg);
+}
+
+/* Week 6: Interactive Section Styles */
+.interactive-row {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.1rem;
+}
+.msg-output, .live-result, .error, .success {
+    font-size: 1rem;
+    vertical-align: middle;
+}
+.msg-output {
+    min-width: 180px;
+    color: #2563eb;
+}
+.live-result {
+    color: #1743a7;
+    margin-left: 0.6rem;
+}
+.counter-btn {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.6rem 1.2rem;
+    font-size: 1.1rem;
+    margin: 0.2rem 0.5rem 0.2rem 0;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.counter-btn:hover {
+    background: #163267;
+}
+.counter-value {
+    font-size: 1.4rem;
+    color: #2563eb;
+    font-weight: bold;
+    margin: 0 12px;
+    min-width: 38px;
+    display: inline-block;
+    text-align: center;
+}
+.reset-btn {
+    background: #ffb300;
+    color: #fff;
+    margin-left: 1rem;
+}
+.reset-btn:hover {
+    background: #b28704;
+}
+.faq {
+    margin-top: 1rem;
+}
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background: #3b77e3;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 2px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.18s;
+}
+.faq-question:hover {
+    background: #1743a7;
+}
+.faq-answer {
+    display: none;
+    padding: 0.85rem 1.3rem;
+    background: #e3eafc;
+    border-radius: 0 0 8px 8px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #1743a7;
+}
+.faq-item.active .faq-answer {
+    display: block;
+    animation: fadeIn 0.3s;
+}
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.form-block {
+    max-width: 430px;
+    margin: 0.7rem 0 1.2rem 0;
+}
+label {
+    min-width: 60px;
+    font-size: 1rem;
+    color: #18355e;
+}
+.error {
+    color: #e53935;
+    margin-left: 5px;
+}
+.success {
+    color: #43a047;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+/* Light/Dark Mode */
+body.dark {
+    background: #181a1b;
+    color: #e3eafc;
+}
+body.dark main {
+    background: #23272b;
+    color: #e3eafc;
+}
+body.dark header, body.dark footer {
+    background: #111;
+    color: #fff;
+}
+body.dark .feature-block, body.dark .faq-answer {
+    background: #23272b;
+    color: #e3eafc;
+}
+body.dark input, body.dark button {
+    background: #23272b;
+    color: #e3eafc;
+    border-color: #444;
+}
+body.dark .faq-question {
+    background: #23272b;
+    color: #e3eafc;
+}
+body.dark .counter-value {
+    color: #fbc02d;
+}
+
+/* Responsive design */
+@media (max-width: 700px) {
+    main {
+        padding: 1.1rem 0.3rem;
+    }
+    .image-container, .animated-image, .flip-card {
+        width: 96vw;
+        max-width: 320px;
+    }
+    .hover-img, .animated-image {
+        width: 90vw;
+        max-width: 320px;
+    }
+    .interactive-row {
+        flex-direction: column;
+        gap: 0.7rem;
+        align-items: stretch;
+    }
+}
